@@ -1,7 +1,7 @@
 <template>
     <WebBar />
     <div class="container">
-        
+
         <v-container fluid>
             <v-row justify="center">
                 <v-col cols="12" md="5" sm="6">
@@ -14,19 +14,19 @@
                                 <v-text-field v-model="email" label="Email" outlined required></v-text-field>
                                 <v-text-field v-model="password" label="Password" outlined type="password"
                                     required></v-text-field>
-                                
-                             
+
+
 
                                 <v-row>
                                     <v-col cols="2">
                                         <v-btn color="primary" dark type="submit">Sign in</v-btn>
-                                        
+
                                     </v-col>
 
                                     <v-col cols="2" offset="8" style="margin-top: 6px;">
                                         <div style="min-width: 60px;">
 
-                                        <p style="color: rgb(216, 27, 96); text-decoration: underline;">Sign up ?</p>
+                                            <p style="color: rgb(216, 27, 96); text-decoration: underline;">Sign up ?</p>
 
                                         </div>
 
@@ -41,7 +41,7 @@
             </v-row>
         </v-container>
 
-        
+
     </div>
     <!-- <Footer/> -->
 </template>
