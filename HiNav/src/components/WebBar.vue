@@ -11,7 +11,28 @@
 
       <v-btn icon style="color: whitesmoke;" @click="dialog = true"><v-icon>mdi-magnify</v-icon></v-btn>
 
-      <v-btn icon style="color: whitesmoke;"><v-icon>mdi-dots-vertical</v-icon></v-btn>
+      <!-- <v-btn icon style="color: whitesmoke;"><v-icon>mdi-dots-vertical</v-icon></v-btn> -->
+
+
+      <v-menu>
+        <template v-slot:activator="{ props }">
+          <v-btn icon v-bind="props" style="color: whitesmoke;"><v-icon>mdi-dots-vertical</v-icon></v-btn>
+        </template>
+        <v-list style="padding-top: 0; padding-bottom: 0;">
+
+          <v-list-item @click="someAction1" class="icon-button">
+            <v-icon color="rgb(122,122,122)">mdi-plus</v-icon>
+          </v-list-item>
+          <v-list-item @click="someAction2" class="icon-button">
+            <v-icon color="rgb(122,122,122)">mdi-minus</v-icon>
+          </v-list-item>
+          <v-list-item @click="someAction3" class="icon-button">
+            <v-icon color="rgb(122,122,122)">mdi-view-list</v-icon>
+          </v-list-item>
+
+        </v-list>
+      </v-menu>
+
     </template>
   </v-app-bar>
 
@@ -113,5 +134,19 @@ export default {
 <style>
 .v-navigation-drawer--right {
   top: 64px;
+}
+
+.icon-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+}
+
+.icon-button:hover {
+  background-color: rgba(0, 0, 0, 0.03);
 }
 </style>

@@ -15,7 +15,11 @@ html {
   zoom: 1.15; 
 }
 
-html, body {
-  overflow-y: hidden;
-}
+
+/* ::-webkit-scrollbar-track {
+    background: transparent; 
+} 
+*/
+
+
 </style>
