@@ -64,43 +64,48 @@
   </v-dialog>
 
   <v-dialog v-model="addDialog" hide-overlay max-width="500px">
-  <v-card>
-    <v-toolbar dark color="primary">
-      <v-toolbar-title>Add New Link</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn icon @click="addDialog = false">
-        <v-icon>mdi-close</v-icon>
-      </v-btn>
-    </v-toolbar>
-    <v-card-text>
-      <v-form>
-        <v-text-field v-model="newLink.url" label="URL" outlined required></v-text-field>
-        <v-text-field v-model="newLink.name" label="Link Name" outlined required></v-text-field>
-        <v-select v-model="newLink.category" :items="categories" label="Category" outlined required></v-select>
-        <v-text-field v-model="newLink.weight" label="Weight" type="number" outlined required></v-text-field>
-        <v-switch v-model="newLink.isPrivate" label="Private?" color="primary" outlined></v-switch>
-        <v-textarea v-model="newLink.description" label="Description" outlined></v-textarea>
-        <v-row class="pa-2">
+    <v-card>
+      <v-toolbar dark color="primary">
+        <v-toolbar-title>Add New Link</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-btn icon @click="addDialog = false">
+          <v-icon>mdi-close</v-icon>
+        </v-btn>
+      </v-toolbar>
+      <v-card-text>
+        <v-form>
+          <v-text-field placeholder="https://witcola.top" v-model="newLink.url" label="URL" outlined
+            required></v-text-field>
+          <v-text-field v-model="newLink.name" label="Link Name" outlined required></v-text-field>
 
-          <v-col cols="3" style="padding-left: 4px;">
-            <v-btn color="primary" dark @click="addLink">Add</v-btn>
-          </v-col>
+          <v-combobox v-model="newLink.category" label="Category"
+            :items="categories"></v-combobox>
 
-          <v-col cols="3" offset="4" style="padding-right: 20px;">
-            <v-btn color="green darken-1" text @click="analyzeLink">Analyze</v-btn>
-          </v-col>
-
-          <v-col cols="2" style="padding-left: 5px; padding-right: 3px;">
-            <v-btn color="blue darken-1" text @click="resetForm">Reset</v-btn>
-          </v-col>
+          <v-text-field v-model="newLink.weight" label="Weight" type="number" outlined required></v-text-field>
+          <v-switch v-model="newLink.isPrivate" label="Private?" color="primary" outlined></v-switch>
+          <v-textarea v-model="newLink.description" label="Description" outlined></v-textarea>
           
+          <v-row class="pa-2">
+
+            <v-col cols="3" style="padding-left: 4px;">
+              <v-btn color="primary" dark @click="addLink">Add</v-btn>
+            </v-col>
+
+            <v-col cols="3" offset="4" style="padding-right: 20px;">
+              <v-btn color="green darken-1" text @click="analyzeLink">Analyze</v-btn>
+            </v-col>
+
+            <v-col cols="2" style="padding-left: 5px; padding-right: 3px;">
+              <v-btn color="blue darken-1" text @click="resetForm">Reset</v-btn>
+            </v-col>
 
 
-        </v-row>
-      </v-form>
-    </v-card-text>
-  </v-card>
-</v-dialog>
+
+          </v-row>
+        </v-form>
+      </v-card-text>
+    </v-card>
+  </v-dialog>
 
   <v-navigation-drawer v-model="drawer" app right clipped :width="drawerHover ? 180 : 60" @mouseover="drawerHover = true"
     @mouseleave="drawerHover = false">
@@ -134,8 +139,8 @@ export default {
         isPrivate: false,
         description: '',
       },
-      categories: ['Category 1', 'Category 2', 'Category 3'],
-      
+      categories: ['我的', '重要', 'VPS', '留学', '最近'],
+
     };
   },
   methods: {
