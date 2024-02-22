@@ -86,7 +86,10 @@ export default {
   components: {
     WebBar,
     Footer
-  }
+  },
+  mounted() {
+    document.title = "iNav";
+  },
 }
 </script>
 
